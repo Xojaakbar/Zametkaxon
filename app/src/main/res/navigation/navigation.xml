@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/verifyScreen">
+
+    <fragment
+        android:id="@+id/main"
+        android:name="uz.gita.luis.qoraroyxat.presentation.screens.main.MainScreen"
+        android:label="Main"
+        tools:layout="@layout/screen_main">
+        <action
+            android:id="@+id/action_main_to_addScreen"
+            app:destination="@id/addScreen"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_to_updateScreen"
+            app:destination="@id/updateScreen"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_to_trashScreen"
+            app:destination="@id/trashScreen"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_to_passwordScreen"
+            app:destination="@id/passwordScreen"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addScreen"
+        android:name="uz.gita.luis.qoraroyxat.presentation.screens.add.AddScreen"
+        android:label="AddScreen"
+        tools:layout="@layout/screen_add"/>
+    <fragment
+        android:id="@+id/updateScreen"
+        android:name="uz.gita.luis.qoraroyxat.presentation.screens.update.UpdateScreen"
+        android:label="UpdateScreen"
+        tools:layout="@layout/screen_update">
+        <argument
+            android:name="notedata"
+            app:argType="uz.gita.luis.qoraroyxat.data.source.local.entity.NoteData" />
+    </fragment>
+    <fragment
+        android:id="@+id/trashScreen"
+        android:name="uz.gita.luis.qoraroyxat.presentation.screens.trash.TrashScreen"
+        android:label="TrashScreen"
+        tools:layout="@layout/sreen_trash"/>
+    <fragment
+        android:id="@+id/verifyScreen"
+        android:name="uz.gita.luis.qoraroyxat.presentation.screens.password.VerifyScreen"
+        android:label="VerifyScreen"
+        tools:layout="@layout/screen_code_verify">
+        <action
+            android:id="@+id/action_verifyScreen_to_main"
+            app:destination="@id/main"
+            app:popUpTo="@id/verifyScreen"
+            app:popUpToInclusive="true"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordScreen"
+        android:name="uz.gita.luis.qoraroyxat.presentation.screens.password.PasswordScreen"
+        android:label="PasswordScreen"
+        tools:layout="@layout/screen_password"/>
+
+</navigation>

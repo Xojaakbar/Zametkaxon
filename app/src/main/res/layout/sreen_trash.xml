@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/tema"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/back_to_main"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="10dp"
+                android:src="@drawable/back2"
+                app:tint="@color/color_icons" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/alata"
+                android:gravity="center"
+                android:text="Trash"
+                android:textColor="@color/color_text"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/delete_all"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="14dp"
+                app:tint="@color/color_icons"
+                android:src="@drawable/delete_all" />
+
+        </LinearLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="3dp"
+        android:paddingTop="15dp"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:spanCount="2"
+        tools:itemCount="12"
+        tools:listitem="@layout/note_item" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

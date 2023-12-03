@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tema"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tema"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_to_main"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="12dp"
+            android:src="@drawable/back2"
+            app:tint="@color/color_icons" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/alata"
+            android:gravity="center"
+            android:minHeight="60dp"
+            android:paddingLeft="5dp"
+            android:text="Update note"
+            android:textColor="@color/color_text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/save"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="15dp"
+            android:src="@drawable/write_icon"
+            app:tint="@color/color_icons"  />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/kim_edi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="60dp"
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        android:hint="Title"
+        android:textStyle="bold"
+        android:background="@color/white"
+        android:paddingHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColorHint="@color/tema"
+        android:textColor="@color/color_text"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/tema"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@id/kim_edi"
+        app:layout_constraintBottom_toTopOf="@id/rich_line"
+        app:layout_constraintVertical_bias="0">
+
+        <jp.wasabeef.richeditor.RichEditor
+            android:id="@+id/nima_qilgan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/kim_edi"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="DuplicateIds"
+            tools:layout_editor_absoluteX="0dp"
+            android:minHeight="60dp"
+            android:textColorHint="@color/tema"
+            android:textColor="@color/tema"
+            android:hint="Content"
+            android:paddingHorizontal="25dp"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/richeditor_bg"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/rich_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rich_editor_bg"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/action_bold"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            app:tint="@color/color_text"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_b" />
+
+        <ImageView
+            android:id="@+id/action_italic"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:tint="@color/color_text"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:layout_gravity="center"
+
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_italic" />
+
+
+        <ImageView
+            android:id="@+id/action_strikethrough"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:tint="@color/color_text"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:layout_gravity="center"
+
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_strikethrough" />
+
+        <ImageView
+            android:id="@+id/action_underline"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:tint="@color/color_text"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:layout_gravity="center"
+
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_underline" />
+
+
+        <ImageView
+            android:id="@+id/action_txt_color"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:tint="@color/color_text"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/baseline_palette_24_rich" />
+
+        <ImageView
+            android:id="@+id/action_bg_color"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:tint="@color/color_text"
+            android:background="@null"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/a_icon" />
+
+        <ImageView
+            android:id="@+id/action_undo"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:tint="@color/color_text"
+            android:background="?android:selectableItemBackgroundBorderless"
+
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/baseline_undo_24" />
+
+        <ImageView
+            android:id="@+id/action_redo"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:tint="@color/color_text"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/baseline_redo_24" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
